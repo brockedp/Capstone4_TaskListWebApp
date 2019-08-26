@@ -30,9 +30,9 @@ namespace Capstone4_TaskListWebApp.Controllers
                     userTaskList.Add(task);
                 }
             }
-
-                
-            return View(userTaskList);
+            IEnumerable<Tasks> organizeByDueDate = userTaskList.OrderBy(m => m.DueDate);
+            return View(organizeByDueDate);
+            // return View(userTaskList);
         }
 
         public IActionResult AddTask()
