@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewData["Title"] = "ListTasks";
+}
+
+<h1>List Tasks</h1>
+
+@model IEnumerable<Capstone4_TaskListWebApp.Models.Tasks>
+
+<table class="table">
+    <tr>
+        <th>Description </th>
+        <th>Due Date </th>
+        <th>Complete </th>
+        
+    </tr>
+
+    @foreach (var task in Model)
+    {
+        <tr>
+            <td>@task.Description </td>
+            <td>@task.DueDate.ToShortDateString() </td>
+            <td>@task.Complete </td>
+            <td><a href="/Task/UpdateTask?Id=@task.TaskId"><input type="submit" value="Update" class="btn-dark" /></a></td>
+            <td><a href="/Task/DeleteTask?Id=@task.TaskId"><input type="submit" value="Delete" class="btn-outline-danger" /></a></td>
+           
+        </tr>
+
+    }
+
+</table>
+

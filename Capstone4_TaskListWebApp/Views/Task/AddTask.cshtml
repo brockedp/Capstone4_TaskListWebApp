@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewData["Title"] = "AddTask";
+}
+<div class="background">
+    <h1>Add Task</h1>
+    <form action="/Task/AddTask" method="post" class="background">
+        <input type="text" name="Description" placeholder="Description" />
+        <input type="date" name="DueDate" placeholder="DueDate" />
+
+        <select name="Complete">
+            <option value="No">No</option>
+            <option value="Yes">Yes</option>
+        </select>
+
+        <input type="submit" value="Add Task" />
+
+
+    </form>
+</div>
+
+
+
+<style>
+    .background {
+        background-color: greenyellow;
+    }
+</style>
+

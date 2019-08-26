@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewData["Title"] = "UpdateTask";
+}
+
+<h1>Update Task</h1>
+@model Capstone4_TaskListWebApp.Models.Tasks
+
+<form action="/Task/UpdateTask" method="post">
+
+    <input type="hidden" name="UserId" value="@Model.UserId" />
+    <input type="hidden" name="TaskId" value="@Model.TaskId" />
+    <input type="hidden" name="Description" value="@Model.Description" />
+    <input type="hidden" name="DueDate" value="@Model.DueDate" />
+
+
+    <p>Task: @Model.Description  </p> 
+    <p>Task: @Model.DueDate.ToShortDateString()  </p> 
+
+    <select name="Complete">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+
+
+
+    <input type="submit" value="Update Task" />
+</form>
+
